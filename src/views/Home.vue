@@ -1,4 +1,4 @@
 <template>
   <h2>Home page</h2>
-  <a href="/todos">Todos</a>
+  <router-link to="/todos">Todos</router-link>
 </template>

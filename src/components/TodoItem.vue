@@ -1,11 +1,11 @@
 <template>
   <li>
     <span v-bind:class="{done: todo.completed}">
-      <input type="checkbox" v-on:change="todo.completed = !todo.completed">
+      <input type="checkbox" v-model="todo.completed">
       <strong>{{index + 1}}</strong>
-      {{todo.title}}
+      {{uppercaseTitle}}
     </span>
-    <button v-on:click="$emit('rm-todo', todo.id)">&times;</button>
+    <button v-on:click="$emit('rm-todo', todo.id);">&times;</button>
   </li>
 </template>
 
@@ -17,6 +17,11 @@ export default {
       required: true,
     },
     index: Number
+  },
+  computed: {
+    uppercaseTitle() {
+     return this.todo.title.toUpperCase();
+    }
   }
 }
 </script>

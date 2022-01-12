@@ -1,5 +1,5 @@
 <template>
-  <a href="/"><h1>Todo App</h1></a>
+  <router-link to="/"><h1>Todo App</h1></router-link>
   <hr>
   <router-view/>
 </template>
